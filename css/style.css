@@ -131,6 +131,54 @@ h6 {
   padding: 0 0.9375rem;
 }
 
+.checkbox {
+  position: relative;
+}
+
+.checkbox__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.checkbox__input:checked + .checkbox__label:before {
+  background-image: url("../img/price/checkbleck.svg");
+  color: #383838;
+}
+
+.checkbox__input:hover + .checkbox__label:before {
+  background-image: url("../img/price/checkbl.svg");
+}
+
+.checkbox__label {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: relative;
+  gap: 10px;
+}
+
+.checkbox__label:before {
+  content: "";
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 1.875rem;
+          flex: 0 0 1.875rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  background-image: url("../img/price/checkgr.svg");
+}
+
+.checkbox__text {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
 .spollers {
   display: -ms-grid;
   display: grid;
@@ -977,6 +1025,14 @@ h6 {
   font-weight: 700;
 }
 
+.checkbox__text_bl {
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 116.666667%;
+  /* 14/12 */
+}
+
 .main-pricing {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 35%;
@@ -1472,14 +1528,6 @@ h6 {
 .sales__logos img {
   border-radius: 0.5rem;
   max-width: 100%;
-}
-
-.checkbox__text {
-  color: #000;
-  font-size: 0.75rem;
-  font-weight: 400;
-  line-height: 116.666667%;
-  /* 14/12 */
 }
 
 @media (min-width: 47.99875em) {
@@ -3004,6 +3052,10 @@ h6 {
 }
 
 @media (any-hover: hover) {
+  .checkbox__text:hover {
+    color: #91C8D9;
+  }
+
   .spollers__title:hover {
     background-color: #EAF5F8;
   }
